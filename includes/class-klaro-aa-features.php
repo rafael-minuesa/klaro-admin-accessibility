@@ -34,6 +34,7 @@ class Klaro_AA_Features {
 		add_filter( 'screen_layout_columns', array( __CLASS__, 'simplify_dashboard_columns' ), 10, 2 );
 		add_filter( 'get_user_option_screen_layout_dashboard', array( __CLASS__, 'force_one_column_dashboard' ) );
 		add_action( 'plugins_loaded', array( __CLASS__, 'maybe_use_classic_editor' ) );
+		add_filter( 'tiny_mce_before_init', array( __CLASS__, 'high_contrast_editor_content' ) );
 	}
 
 	/**
@@ -143,6 +144,25 @@ class Klaro_AA_Features {
 			return $value;
 		}
 		return 1;
+	}
+
+	/**
+	 * Carry high contrast into the visual editor's writing surface. The
+	 * editor content lives in an iframe that admin CSS cannot reach, so the
+	 * colors are injected through TinyMCE's content_style setting.
+	 *
+	 * @param array $mce_init TinyMCE configuration.
+	 * @return array
+	 */
+	public static function high_contrast_editor_content( $mce_init ) {
+		$options = Klaro_AA_Settings::get_options();
+		if ( empty( $options['high_contrast'] ) ) {
+			return $mce_init;
+		}
+		$css = 'body.mce-content-body{background-color:#000000 !important;color:#FFFFFF !important} body.mce-content-body a{color:#00D4FF !important}';
+
+		$mce_init['content_style'] = isset( $mce_init['content_style'] ) ? $mce_init['content_style'] . ' ' . $css : $css;
+		return $mce_init;
 	}
 
 	/**

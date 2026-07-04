@@ -157,6 +157,19 @@ body.klaro-aa-high-contrast #wpbody-content :is(div, section, article, aside, na
 	color: #FFFFFF !important;
 }
 
+/* Classic editor Visual/Code switch tabs */
+body.klaro-aa-high-contrast #wpbody-content .wp-switch-editor {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content .tmce-active .switch-tmce,
+body.klaro-aa-high-contrast #wpbody-content .html-active .switch-html {
+	background: #FFFFFF !important;
+	color: #000000 !important;
+}
+
 /* Nav tabs (core component reused by many plugin screens) */
 body.klaro-aa-high-contrast #wpbody-content .nav-tab {
 	background: #000000 !important;
