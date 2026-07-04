@@ -1,0 +1,35 @@
+{
+    "name": "rafael-minuesa/klaro-admin-accessibility",
+    "description": "Makes the WordPress admin more accessible: high contrast, large text, focus indicators, reduced motion, simplified menu, classic editor toggle",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Rafael Minuesa",
+            "email": "contact@prowoos.com",
+            "homepage": "https://prowoos.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=WordPress --extensions=php --ignore=vendor .",
+        "phpcs:fix": "phpcbf --standard=WordPress --extensions=php --ignore=vendor .",
+        "lint": [
+            "@phpcs"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

@@ -1,0 +1,21 @@
+# Dependencies
+vendor/
+node_modules/
+composer.lock
+
+# Build output (created one level up, but guard anyway)
+*.zip
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.cer
+
+# Editor / OS cruft
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/

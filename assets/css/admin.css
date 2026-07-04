@@ -1,0 +1,206 @@
+/**
+ * Klaro Admin Accessibility - admin styles.
+ *
+ * Every rule is gated by a body class that Klaro_AA_Features adds when the
+ * matching option is enabled, so this single cacheable file covers all modes.
+ */
+
+/* ==========================================================================
+   Large admin text (.klaro-aa-large-text)
+   ========================================================================== */
+
+body.klaro-aa-large-text,
+body.klaro-aa-large-text #wpcontent,
+body.klaro-aa-large-text .wrap {
+	font-size: 18px !important;
+	line-height: 1.8 !important;
+}
+
+body.klaro-aa-large-text input[type="text"],
+body.klaro-aa-large-text input[type="email"],
+body.klaro-aa-large-text input[type="url"],
+body.klaro-aa-large-text input[type="password"],
+body.klaro-aa-large-text input[type="search"],
+body.klaro-aa-large-text input[type="number"],
+body.klaro-aa-large-text textarea,
+body.klaro-aa-large-text select {
+	font-size: 16px !important;
+	padding: 8px 12px !important;
+}
+
+body.klaro-aa-large-text .wp-list-table td,
+body.klaro-aa-large-text .wp-list-table th {
+	font-size: 16px !important;
+	padding: 12px !important;
+}
+
+body.klaro-aa-large-text #adminmenu a {
+	font-size: 16px !important;
+	padding: 10px !important;
+}
+
+body.klaro-aa-large-text .button,
+body.klaro-aa-large-text .button-primary,
+body.klaro-aa-large-text .button-secondary {
+	font-size: 16px !important;
+	padding: 10px 18px !important;
+	min-height: 44px !important;
+}
+
+/* ==========================================================================
+   High contrast admin (.klaro-aa-high-contrast)
+   ========================================================================== */
+
+body.klaro-aa-high-contrast {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #wpcontent,
+body.klaro-aa-high-contrast #wpbody-content,
+body.klaro-aa-high-contrast .wrap,
+body.klaro-aa-high-contrast .wp-core-ui .button,
+body.klaro-aa-high-contrast .wp-core-ui .button-secondary,
+body.klaro-aa-high-contrast .tablenav,
+body.klaro-aa-high-contrast .widefat,
+body.klaro-aa-high-contrast .postbox,
+body.klaro-aa-high-contrast .postbox .inside {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .wrap h1,
+body.klaro-aa-high-contrast .wrap h2,
+body.klaro-aa-high-contrast .postbox .postbox-header h2,
+body.klaro-aa-high-contrast .form-table th,
+body.klaro-aa-high-contrast .form-table td,
+body.klaro-aa-high-contrast .form-table td p.description {
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .postbox,
+body.klaro-aa-high-contrast .notice {
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .notice {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast input[type="text"],
+body.klaro-aa-high-contrast input[type="email"],
+body.klaro-aa-high-contrast input[type="url"],
+body.klaro-aa-high-contrast input[type="password"],
+body.klaro-aa-high-contrast input[type="search"],
+body.klaro-aa-high-contrast input[type="number"],
+body.klaro-aa-high-contrast input[type="checkbox"],
+body.klaro-aa-high-contrast textarea,
+body.klaro-aa-high-contrast select {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .wp-core-ui .button-primary {
+	background: #FFFFFF !important;
+	color: #000000 !important;
+	border: 3px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .wp-core-ui .button-primary:hover,
+body.klaro-aa-high-contrast .wp-core-ui .button-primary:focus {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #adminmenu,
+body.klaro-aa-high-contrast #adminmenuback,
+body.klaro-aa-high-contrast #adminmenuwrap,
+body.klaro-aa-high-contrast #wpadminbar {
+	background: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #adminmenu a,
+body.klaro-aa-high-contrast #adminmenu .wp-submenu a,
+body.klaro-aa-high-contrast #wpadminbar .ab-item {
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+body.klaro-aa-high-contrast #adminmenu .wp-menu-arrow,
+body.klaro-aa-high-contrast #adminmenu .wp-menu-arrow div,
+body.klaro-aa-high-contrast #adminmenu li.current a.menu-top,
+body.klaro-aa-high-contrast #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+	background: #FFFFFF !important;
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #adminmenu li.current a.menu-top .wp-menu-name,
+body.klaro-aa-high-contrast #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu .wp-menu-name {
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast .widefat thead th,
+body.klaro-aa-high-contrast .widefat thead td {
+	background: #FFFFFF !important;
+	color: #000000 !important;
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .widefat tbody tr:nth-child(odd) {
+	background: #1a1a1a !important;
+}
+
+body.klaro-aa-high-contrast a {
+	color: #00D4FF !important;
+}
+
+body.klaro-aa-high-contrast a:hover,
+body.klaro-aa-high-contrast a:focus {
+	color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   Reduce motion (.klaro-aa-reduce-motion)
+   ========================================================================== */
+
+body.klaro-aa-reduce-motion *,
+body.klaro-aa-reduce-motion *::before,
+body.klaro-aa-reduce-motion *::after {
+	animation-duration: 0.01ms !important;
+	animation-iteration-count: 1 !important;
+	transition-duration: 0.01ms !important;
+	scroll-behavior: auto !important;
+}
+
+/* ==========================================================================
+   Enhanced focus indicators (.klaro-aa-focus-indicators)
+
+   #C2410C is 5.18:1 on white, passing the 3:1 UI-control requirement with
+   room to spare (the legacy #FF6B00 was 2.86:1 and failed).
+   ========================================================================== */
+
+body.klaro-aa-focus-indicators a:focus,
+body.klaro-aa-focus-indicators button:focus,
+body.klaro-aa-focus-indicators input:focus,
+body.klaro-aa-focus-indicators textarea:focus,
+body.klaro-aa-focus-indicators select:focus,
+body.klaro-aa-focus-indicators .wp-core-ui .button:focus,
+body.klaro-aa-focus-indicators #adminmenu a:focus {
+	outline: 3px solid #C2410C !important;
+	outline-offset: 2px !important;
+	box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.3) !important;
+}
+
+/* Yellow focus on the black high-contrast background, matching the Klaro theme. */
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast a:focus,
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast button:focus,
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast input:focus,
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast textarea:focus,
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast select:focus,
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast .wp-core-ui .button:focus,
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast #adminmenu a:focus {
+	outline-color: #FFFF00 !important;
+	box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.3) !important;
+}
