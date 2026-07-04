@@ -159,7 +159,9 @@ class Klaro_AA_Features {
 		if ( empty( $options['high_contrast'] ) ) {
 			return $mce_init;
 		}
-		$css = 'body.mce-content-body{background-color:#000000 !important;color:#FFFFFF !important} body.mce-content-body a{color:#00D4FF !important}';
+		$css = 'body.mce-content-body{background-color:#000000 !important;color:#FFFFFF !important}'
+			. ' body.mce-content-body :is(h1,h2,h3,h4,h5,h6,p,li,td,th,blockquote,figcaption,span,strong,em){color:#FFFFFF !important}'
+			. ' body.mce-content-body a{color:#00D4FF !important}';
 
 		$mce_init['content_style'] = isset( $mce_init['content_style'] ) ? $mce_init['content_style'] . ' ' . $css : $css;
 		return $mce_init;

@@ -88,6 +88,14 @@ body.klaro-aa-high-contrast .notice {
 	color: #FFFFFF !important;
 }
 
+/* The Privacy Policy guide notice renders before .wp-header-end, so core
+   never relocates it below the Screen Options / Help buttons. Core hides
+   the resulting underlap with white-on-white; the high-contrast border
+   exposes it, so push the notice clear of the button band. */
+body.klaro-aa-high-contrast #wpbody-content .wp-pp-notice {
+	margin-top: 76px !important;
+}
+
 body.klaro-aa-high-contrast input[type="text"],
 body.klaro-aa-high-contrast input[type="email"],
 body.klaro-aa-high-contrast input[type="url"],
