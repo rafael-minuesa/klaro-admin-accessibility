@@ -25,6 +25,9 @@ WordPress plugin making the admin area accessible: high contrast, large text, fo
 
 ## Key Implementation Details
 
+- High contrast works as a FORCED-COLORS sweep over `#wpbody-content`: every author background inside the content area is stripped (`background-color: transparent !important` + white text), EXCEPT elements with inline background styles (color swatches/previews survive). Component rules (nav-tabs, buttons, list-table striping, inverted table headers) sit above the sweep with higher-specificity selectors. This is what makes third-party plugin screens readable without per-plugin patches.
+- SELECTOR GOTCHA: `.wp-core-ui` is a class ON `<body>`. `body.klaro-aa-high-contrast .wp-core-ui .button` never matches (descendant can't be the body itself); it must be the compound `body.klaro-aa-high-contrast.wp-core-ui .button`. This bug shipped silently in the first port from the legacy theme code.
+
 - Features are CSS-only where possible: `admin_body_class` filter adds `klaro-aa-<feature>` classes, one static stylesheet enqueued only when a visual feature is on. No inline style/script echo anywhere (review requirement).
 - Focus indicator: `#C2410C` (5.18:1), switches to `#FFFF00` when combined with high contrast, same pairing as the theme. The legacy `#FF6B00` fails contrast, never revert.
 - Classic editor toggle bails out when `class_exists( 'Classic_Editor' )`.

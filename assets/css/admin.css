@@ -59,8 +59,8 @@ body.klaro-aa-high-contrast {
 body.klaro-aa-high-contrast #wpcontent,
 body.klaro-aa-high-contrast #wpbody-content,
 body.klaro-aa-high-contrast .wrap,
-body.klaro-aa-high-contrast .wp-core-ui .button,
-body.klaro-aa-high-contrast .wp-core-ui .button-secondary,
+body.klaro-aa-high-contrast.wp-core-ui .button,
+body.klaro-aa-high-contrast.wp-core-ui .button-secondary,
 body.klaro-aa-high-contrast .tablenav,
 body.klaro-aa-high-contrast .widefat,
 body.klaro-aa-high-contrast .postbox,
@@ -102,14 +102,14 @@ body.klaro-aa-high-contrast select {
 	border: 2px solid #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast .wp-core-ui .button-primary {
+body.klaro-aa-high-contrast.wp-core-ui .button-primary {
 	background: #FFFFFF !important;
 	color: #000000 !important;
 	border: 3px solid #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast .wp-core-ui .button-primary:hover,
-body.klaro-aa-high-contrast .wp-core-ui .button-primary:focus {
+body.klaro-aa-high-contrast.wp-core-ui .button-primary:hover,
+body.klaro-aa-high-contrast.wp-core-ui .button-primary:focus {
 	background: #000000 !important;
 	color: #FFFFFF !important;
 }
@@ -148,32 +148,51 @@ body.klaro-aa-high-contrast .widefat thead td {
 	border: 2px solid #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast .widefat tbody tr:nth-child(odd) {
-	background: #1a1a1a !important;
+/* Forced-colors sweep for the content area. Core screens and third-party
+   plugin pages bring arbitrary panel backgrounds and muted text; strip
+   every author background and force white text. Elements with inline
+   background styles (color swatches, previews) are preserved. */
+body.klaro-aa-high-contrast #wpbody-content :is(div, section, article, aside, nav, header, footer, main, form, fieldset, legend, table, thead, tbody, tfoot, tr, td, th, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, blockquote, figure, figcaption, caption, label, span, small, strong, em, b, i, code, pre, address):not([style*="background"]) {
+	background-color: transparent !important;
+	color: #FFFFFF !important;
 }
 
-/* List tables (plugins, posts, users, ...): core sets per-state row
-   backgrounds (e.g. the light row for inactive plugins) and muted gray
-   text that the forced palette must override. */
-body.klaro-aa-high-contrast .wp-list-table tbody th,
-body.klaro-aa-high-contrast .wp-list-table tbody td {
+/* Nav tabs (core component reused by many plugin screens) */
+body.klaro-aa-high-contrast #wpbody-content .nav-tab {
 	background: #000000 !important;
 	color: #FFFFFF !important;
+	border: 2px solid #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast .wp-list-table tbody tr:nth-child(even) th,
-body.klaro-aa-high-contrast .wp-list-table tbody tr:nth-child(even) td {
-	background: #1a1a1a !important;
+body.klaro-aa-high-contrast #wpbody-content .nav-tab-active,
+body.klaro-aa-high-contrast #wpbody-content .nav-tab:hover {
+	background: #FFFFFF !important;
+	color: #000000 !important;
 }
 
-body.klaro-aa-high-contrast .wp-list-table p,
-body.klaro-aa-high-contrast .wp-list-table .plugin-description,
-body.klaro-aa-high-contrast .wp-list-table .plugin-version-author-uri,
-body.klaro-aa-high-contrast .wp-list-table .row-actions,
-body.klaro-aa-high-contrast .wp-list-table .description,
-body.klaro-aa-high-contrast .wp-list-table em,
-body.klaro-aa-high-contrast .wp-list-table span {
-	color: #FFFFFF !important;
+/* Links keep author backgrounds out of the sweep; strip those too so
+   cyan link text never sits on a plugin-supplied mid-tone background.
+   Real buttons and tabs are excluded and styled explicitly. */
+body.klaro-aa-high-contrast #wpbody-content a:not(.button):not(.button-primary):not(.button-secondary):not(.button-link):not(.nav-tab):not([style*="background"]) {
+	background-color: transparent !important;
+}
+
+/* Intentional inversions and striping restored above the sweep
+   (these selectors must out-rank the forced-colors rule). */
+body.klaro-aa-high-contrast #wpbody-content .widefat thead th,
+body.klaro-aa-high-contrast #wpbody-content .widefat thead td {
+	background-color: #FFFFFF !important;
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content .widefat thead :is(th, td) :is(span, a, strong, em, abbr) {
+	background-color: transparent !important;
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content .wp-list-table tbody tr:nth-child(even) th,
+body.klaro-aa-high-contrast #wpbody-content .wp-list-table tbody tr:nth-child(even) td {
+	background-color: #1a1a1a !important;
 }
 
 body.klaro-aa-high-contrast a {
@@ -182,6 +201,17 @@ body.klaro-aa-high-contrast a {
 
 body.klaro-aa-high-contrast a:hover,
 body.klaro-aa-high-contrast a:focus {
+	color: #FFFFFF !important;
+}
+
+/* Link-style buttons (Quick Edit, Show more details, ...) read as links */
+body.klaro-aa-high-contrast #wpbody-content .button-link {
+	background: transparent !important;
+	color: #00D4FF !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content .button-link:hover,
+body.klaro-aa-high-contrast #wpbody-content .button-link:focus {
 	color: #FFFFFF !important;
 }
 
@@ -267,7 +297,7 @@ body.klaro-aa-focus-indicators button:focus,
 body.klaro-aa-focus-indicators input:focus,
 body.klaro-aa-focus-indicators textarea:focus,
 body.klaro-aa-focus-indicators select:focus,
-body.klaro-aa-focus-indicators .wp-core-ui .button:focus,
+body.klaro-aa-focus-indicators.wp-core-ui .button:focus,
 body.klaro-aa-focus-indicators #adminmenu a:focus {
 	outline: 3px solid #C2410C !important;
 	outline-offset: 2px !important;
@@ -280,7 +310,7 @@ body.klaro-aa-focus-indicators.klaro-aa-high-contrast button:focus,
 body.klaro-aa-focus-indicators.klaro-aa-high-contrast input:focus,
 body.klaro-aa-focus-indicators.klaro-aa-high-contrast textarea:focus,
 body.klaro-aa-focus-indicators.klaro-aa-high-contrast select:focus,
-body.klaro-aa-focus-indicators.klaro-aa-high-contrast .wp-core-ui .button:focus,
+body.klaro-aa-focus-indicators.klaro-aa-high-contrast.wp-core-ui .button:focus,
 body.klaro-aa-focus-indicators.klaro-aa-high-contrast #adminmenu a:focus {
 	outline-color: #FFFF00 !important;
 	box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.3) !important;
