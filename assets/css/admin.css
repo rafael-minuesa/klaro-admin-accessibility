@@ -175,6 +175,23 @@ body.klaro-aa-high-contrast #wpbody-content :is(div, section, article, aside, na
 	color: #FFFFFF !important;
 }
 
+/* Editor toolbars are absolutely positioned and become sticky on scroll.
+   The forced-colors sweep left them transparent, so page content showed
+   through; restore an opaque background (both the Text-mode quicktags and
+   the Visual-mode TinyMCE toolbar). */
+body.klaro-aa-high-contrast #wpwrap #wpbody-content .wp-editor-tools,
+body.klaro-aa-high-contrast #wpwrap #wpbody-content .quicktags-toolbar,
+body.klaro-aa-high-contrast #wpwrap #wpbody-content .mce-toolbar-grp,
+body.klaro-aa-high-contrast #wpwrap #wpbody-content .mce-menubar,
+body.klaro-aa-high-contrast #wpwrap #wpbody-content .mce-statusbar {
+	background-color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #wpwrap #wpbody-content .wp-editor-tools,
+body.klaro-aa-high-contrast #wpwrap #wpbody-content .quicktags-toolbar {
+	border-bottom: 1px solid #FFFFFF !important;
+}
+
 /* Classic editor Visual/Code switch tabs */
 body.klaro-aa-high-contrast #wpbody-content .wp-switch-editor {
 	background: #000000 !important;
