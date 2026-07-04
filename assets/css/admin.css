@@ -183,6 +183,41 @@ body.klaro-aa-high-contrast #dashboard-widgets .activity-block li:nth-child(even
 	background-color: #1a1a1a !important;
 }
 
+/* Screen Options / Help panels: core gives them a white background,
+   which turned the inherited white text invisible. */
+body.klaro-aa-high-contrast #screen-meta,
+body.klaro-aa-high-contrast #screen-options-wrap,
+body.klaro-aa-high-contrast #contextual-help-wrap,
+body.klaro-aa-high-contrast #contextual-help-back,
+body.klaro-aa-high-contrast .contextual-help-tabs .active a {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #screen-meta {
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #screen-meta-links .show-settings {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+	border: 2px solid #FFFFFF !important;
+}
+
+/* ==========================================================================
+   Simplified one-column dashboard (.klaro-aa-simplify-menu)
+
+   Core does not stretch postbox containers to full width under the forced
+   columns-1 layout, leaving them at 75%.
+   ========================================================================== */
+
+body.klaro-aa-simplify-menu #dashboard-widgets-wrap,
+body.klaro-aa-simplify-menu #dashboard-widgets,
+body.klaro-aa-simplify-menu #dashboard-widgets .postbox-container {
+	width: 100% !important;
+	float: none !important;
+}
+
 /* ==========================================================================
    Reduce motion (.klaro-aa-reduce-motion)
    ========================================================================== */

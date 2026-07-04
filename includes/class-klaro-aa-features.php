@@ -16,11 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Klaro_AA_Features {
 
 	/**
-	 * Feature keys that only need CSS (body class + stylesheet).
+	 * Feature keys that need CSS (body class + stylesheet). simplify_menu is
+	 * included for its one-column dashboard layout rules.
 	 *
 	 * @var string[]
 	 */
-	private static $css_features = array( 'high_contrast', 'large_text', 'focus_indicators', 'reduce_motion' );
+	private static $css_features = array( 'high_contrast', 'large_text', 'focus_indicators', 'reduce_motion', 'simplify_menu' );
 
 	/**
 	 * Wire up hooks.
