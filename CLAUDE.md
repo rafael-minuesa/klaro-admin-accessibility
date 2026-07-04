@@ -29,7 +29,7 @@ WordPress plugin making the admin area accessible: high contrast, large text, fo
 - Focus indicator: `#C2410C` (5.18:1), switches to `#FFFF00` when combined with high contrast, same pairing as the theme. The legacy `#FF6B00` fails contrast, never revert.
 - Classic editor toggle bails out when `class_exists( 'Classic_Editor' )`.
 - Settings API handles nonces (`settings_fields('klaro_aa_options_group')`); sanitize callback whitelists the 6 keys and casts to bool.
-- `simplify_menu` gates BOTH the menu removals (non-admins only) and the dashboard meta box removals (legacy removed those unconditionally, a bug).
+- `simplify_menu` gates the menu removals (non-admins only), the dashboard meta box removals (legacy removed those unconditionally, a bug), AND a forced one-column dashboard (`screen_layout_columns` + `get_user_option_screen_layout_dashboard` filters); the user's own column choice returns when the option is off.
 
 ## Build Process
 

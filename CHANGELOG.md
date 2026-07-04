@@ -16,7 +16,7 @@ Initial release. Rebirth of the admin accessibility subsystem removed from the K
 - Large admin text (18px base, 44px minimum button height)
 - Enhanced focus indicators, enabled by default (3px #C2410C outline, #FFFF00 on high contrast)
 - Reduce motion option (forces animation suppression regardless of OS preference)
-- Simplify admin menu option (hides Tools/Comments for non-admins, removes secondary dashboard widgets)
+- Simplify admin menu option (hides Tools/Comments for non-admins, removes secondary dashboard widgets, switches the dashboard to a single column)
 - Classic editor toggle (defers to the Classic Editor plugin when active)
 - Settings page under Settings > Admin Accessibility using the Settings API
 - `klaro_aa_enabled_features` filter over the resolved feature flags

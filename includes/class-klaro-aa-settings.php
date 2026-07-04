@@ -152,7 +152,7 @@ class Klaro_AA_Settings {
 			),
 			'simplify_menu'    => array(
 				'label'       => __( 'Simplify admin menu', 'klaro-admin-accessibility' ),
-				'description' => __( 'Hides the Tools and Comments menus for non-administrator users and removes secondary dashboard widgets, reducing cognitive load.', 'klaro-admin-accessibility' ),
+				'description' => __( 'Hides the Tools and Comments menus for non-administrator users, removes secondary dashboard widgets, and switches the dashboard to a single column, reducing cognitive load.', 'klaro-admin-accessibility' ),
 			),
 			'classic_editor'   => array(
 				'label'       => __( 'Use the classic editor', 'klaro-admin-accessibility' ),

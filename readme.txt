@@ -21,7 +21,7 @@ Klaro Admin Accessibility helps users with visual, motor, or cognitive disabilit
 * **Large admin text** - 18px base text, larger form fields, and 44px minimum button height for easier reading and clicking.
 * **Enhanced focus indicators** - Highly visible 3px outlines on every focused link, button, and form field, meeting the 3:1 contrast requirement for UI controls.
 * **Reduce motion** - Suppresses admin animations and transitions for users whose operating system does not expose a reduced-motion preference.
-* **Simplify admin menu** - Hides the Tools and Comments menus for non-administrator users and removes secondary dashboard widgets, reducing cognitive load.
+* **Simplify admin menu** - Hides the Tools and Comments menus for non-administrator users, removes secondary dashboard widgets, and switches the dashboard to a single column, reducing cognitive load.
 * **Classic editor toggle** - Replaces the block editor with the classic editor, which some assistive technology users find easier to navigate. Defers to the Classic Editor plugin when that is active.
 
 All settings are site-wide and live under Settings > Admin Accessibility.
@@ -77,7 +77,7 @@ The plugin deletes its single `klaro_aa_options` option. No other data is stored
 * Large admin text
 * Enhanced focus indicators (enabled by default)
 * Reduce motion option
-* Simplified admin menu option
+* Simplified admin menu option (single-column dashboard, fewer widgets and menus)
 * Classic editor toggle
 
 == Upgrade Notice ==

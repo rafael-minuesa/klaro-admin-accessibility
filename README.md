@@ -14,7 +14,7 @@ Companion plugin to the [Klaro accessibility-first theme](https://wordpress.org/
 - **Large admin text**, 18px base text, larger form fields, 44px minimum button height
 - **Enhanced focus indicators** (on by default), 3px `#C2410C` outlines on every focused control, `#FFFF00` when combined with high contrast
 - **Reduce motion**, forces animation suppression for users whose OS lacks the setting
-- **Simplify admin menu**, hides Tools and Comments for non-administrators and removes secondary dashboard widgets
+- **Simplify admin menu**, hides Tools and Comments for non-administrators, removes secondary dashboard widgets, and switches the dashboard to a single column
 - **Classic editor toggle**, defers to the Classic Editor plugin when that is active
 
 Settings live under **Settings > Admin Accessibility** (site-wide, `manage_options`).
