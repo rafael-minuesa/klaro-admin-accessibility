@@ -161,6 +161,28 @@ body.klaro-aa-high-contrast a:focus {
 	color: #FFFFFF !important;
 }
 
+/* Dashboard widgets: core alternates white row backgrounds and gray
+   sub-headers that the forced palette would make unreadable. */
+body.klaro-aa-high-contrast #dashboard-widgets .inside,
+body.klaro-aa-high-contrast #dashboard-widgets .inside *:not(a) {
+	background-color: transparent !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #dashboard-widgets .inside a {
+	color: #00D4FF !important;
+}
+
+body.klaro-aa-high-contrast #dashboard-widgets .inside a:hover,
+body.klaro-aa-high-contrast #dashboard-widgets .inside a:focus {
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #dashboard-widgets li:nth-child(even),
+body.klaro-aa-high-contrast #dashboard-widgets .activity-block li:nth-child(even) {
+	background-color: #1a1a1a !important;
+}
+
 /* ==========================================================================
    Reduce motion (.klaro-aa-reduce-motion)
    ========================================================================== */
