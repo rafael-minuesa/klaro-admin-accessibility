@@ -152,6 +152,30 @@ body.klaro-aa-high-contrast .widefat tbody tr:nth-child(odd) {
 	background: #1a1a1a !important;
 }
 
+/* List tables (plugins, posts, users, ...): core sets per-state row
+   backgrounds (e.g. the light row for inactive plugins) and muted gray
+   text that the forced palette must override. */
+body.klaro-aa-high-contrast .wp-list-table tbody th,
+body.klaro-aa-high-contrast .wp-list-table tbody td {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .wp-list-table tbody tr:nth-child(even) th,
+body.klaro-aa-high-contrast .wp-list-table tbody tr:nth-child(even) td {
+	background: #1a1a1a !important;
+}
+
+body.klaro-aa-high-contrast .wp-list-table p,
+body.klaro-aa-high-contrast .wp-list-table .plugin-description,
+body.klaro-aa-high-contrast .wp-list-table .plugin-version-author-uri,
+body.klaro-aa-high-contrast .wp-list-table .row-actions,
+body.klaro-aa-high-contrast .wp-list-table .description,
+body.klaro-aa-high-contrast .wp-list-table em,
+body.klaro-aa-high-contrast .wp-list-table span {
+	color: #FFFFFF !important;
+}
+
 body.klaro-aa-high-contrast a {
 	color: #00D4FF !important;
 }
