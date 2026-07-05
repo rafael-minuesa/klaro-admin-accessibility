@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Rafael Minuesa
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Klaro Admin Accessibility 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/klaro-admin-accessibility\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-05T07:52:26+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: klaro-admin-accessibility\n"
+
+#. Plugin Name of the plugin
+#: klaro-admin-accessibility.php
+#: includes/class-klaro-aa-settings.php:106
+msgid "Klaro Admin Accessibility"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: klaro-admin-accessibility.php
+msgid "https://github.com/rafael-minuesa/klaro-admin-accessibility"
+msgstr ""
+
+#. Description of the plugin
+#: klaro-admin-accessibility.php
+msgid "Makes the WordPress admin more accessible: high contrast mode, large text, enhanced focus indicators, reduced motion, a simplified menu, and a classic editor toggle. Companion plugin to the Klaro theme, works with any theme."
+msgstr ""
+
+#. Author of the plugin
+#: klaro-admin-accessibility.php
+msgid "Rafael Minuesa"
+msgstr ""
+
+#. Author URI of the plugin
+#: klaro-admin-accessibility.php
+msgid "https://prowoos.com"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:107
+msgid "Admin Accessibility"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:124
+msgid "Settings"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:138
+msgid "High contrast admin"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:139
+msgid "Black background with white text throughout the admin area for maximum readability."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:142
+msgid "Large admin text"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:143
+msgid "Increases admin text to 18px with larger form fields and 44px minimum button height."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:146
+msgid "Enhanced focus indicators"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:147
+msgid "Highly visible 3px outlines on every focused link, button, and form field."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:150
+msgid "Reduce motion"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:151
+msgid "Suppresses admin animations and transitions. WordPress already honors your operating system's reduced-motion preference; this forces it on regardless of that setting."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:154
+msgid "Simplify admin menu"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:155
+msgid "Hides the Tools and Comments menus for non-administrator users, removes secondary dashboard widgets, and switches the dashboard to a single column, reducing cognitive load."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:158
+msgid "Use the classic editor"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:159
+msgid "Replaces the block editor with the classic editor, which some assistive technology users find easier to navigate. Ignored when the Classic Editor plugin is active."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:177
+msgid "Site-wide accessibility enhancements for the WordPress admin area. Companion plugin to the Klaro theme; works with any theme."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:181
+msgid "The Classic Editor plugin is active, so it manages the editor and the classic editor option below has no effect."
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:217
+msgid "WordPress built-in accessibility features:"
+msgstr ""
+
+#: includes/class-klaro-aa-settings.php:218
+msgid "The admin already includes keyboard shortcuts, screen reader landmarks, a \"Skip to main content\" link, and honors your system's reduced-motion preference. This plugin adds options on top of those."
+msgstr ""
