@@ -47,6 +47,13 @@ body.klaro-aa-large-text .button-secondary {
 	min-height: 44px !important;
 }
 
+/* Classic editor status bar under the content box (word count, autosave
+   message, last-edited date) - core keeps these at 12px. */
+body.klaro-aa-large-text #post-status-info,
+body.klaro-aa-large-text #post-status-info td {
+	font-size: 16px !important;
+}
+
 /* ==========================================================================
    High contrast admin (.klaro-aa-high-contrast)
    ========================================================================== */
