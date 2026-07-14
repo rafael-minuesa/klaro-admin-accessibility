@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-07-15
+
+### Fixed
+- Large text mode: reduced oversized admin button padding (now 3px 14px, was 10px 18px); the 44px minimum touch-target height is preserved
+- Large text mode: the classic editor status bar under the content box (word count, autosave message, last-edited date) is now enlarged to 16px instead of staying at core's 12px
+
 ## [1.0.0] - 2026-07-04
 
 Initial release. Rebirth of the admin accessibility subsystem removed from the Klaro theme in v1.3.7 (settings pages are plugin territory per wordpress.org theme review), rebuilt to current plugin review standards.

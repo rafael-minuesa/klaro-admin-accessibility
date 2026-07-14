@@ -6,7 +6,7 @@ WordPress plugin making the admin area accessible: high contrast, large text, fo
 
 ## Current Version
 
-**v1.0.0** (2026-07-04) - Initial release, not yet submitted to wordpress.org.
+**v1.0.1** (2026-07-15) - Large text mode fixes: button padding, classic editor status bar text size.
 
 ## File Structure
 

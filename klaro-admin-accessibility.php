@@ -3,7 +3,7 @@
  * Plugin Name: Klaro Admin Accessibility
  * Plugin URI: https://github.com/rafael-minuesa/klaro-admin-accessibility
  * Description: Makes the WordPress admin more accessible: high contrast mode, large text, enhanced focus indicators, reduced motion, a simplified menu, and a classic editor toggle. Companion plugin to the Klaro theme, works with any theme.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Rafael Minuesa
  * Author URI: https://prowoos.com
  * License: GPLv2 or later
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KLARO_AA_VERSION', '1.0.0' );
+define( 'KLARO_AA_VERSION', '1.0.1' );
 define( 'KLARO_AA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'KLARO_AA_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'KLARO_AA_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );

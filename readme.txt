@@ -5,7 +5,7 @@ Tags: accessibility, admin, high contrast, large text, classic editor
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,10 @@ The plugin deletes its single `klaro_aa_options` option. No other data is stored
 
 == Changelog ==
 
+= 1.0.1 =
+* Large text mode: reduced oversized admin button padding (now 3px 14px), 44px minimum touch-target height preserved
+* Large text mode: enlarged the classic editor status bar under the content box (word count, autosave message, last-edited date) to 16px, was stuck at core's 12px
+
 = 1.0.0 =
 * Initial release
 * High contrast admin mode
@@ -81,6 +85,9 @@ The plugin deletes its single `klaro_aa_options` option. No other data is stored
 * Classic editor toggle
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Large text mode fixes: smaller button padding, larger classic editor status bar text.
 
 = 1.0.0 =
 Initial release.

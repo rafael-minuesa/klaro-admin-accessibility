@@ -3,7 +3,7 @@
 **Makes the WordPress admin more accessible for users with disabilities.**
 
 ![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+![Version](https://img.shields.io/badge/version-1.0.1-green.svg)
 ![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)
 
 Companion plugin to the [Klaro accessibility-first theme](https://wordpress.org/themes/klaro/). The theme covers the front end; this plugin covers the admin area. It styles the WordPress core admin, so it works with any theme.
@@ -38,7 +38,7 @@ composer phpcs      # WordPress coding standards
 
 ## Current Version
 
-1.0.0
+1.0.1
 
 ## License
 
