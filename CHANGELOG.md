@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-09-24
+
+Four fixes from local testing of 1.1.0.
+
+### Fixed
+- Large text: the 10px padding on every admin menu link stacked on core's label padding and wrapped "WooCommerce" onto three lines; the size now sits on the label and submenu links only.
+- High contrast: WooCommerce's "Store coming soon" admin bar badge, and any admin bar item with an inline background, are black text on white instead of white on light gray (1.07:1).
+- High contrast: the Appearance > Themes details overlay had its panels stripped by the content sweep; backdrop, panels and header buttons are black with white text and a white frame.
+- High contrast: the readable-pairs rule now covers the bare `button` element, so Site Health's accordion rows read 12.82:1 instead of white on white.
+
 ## [1.1.0] - 2026-09-24
 
 Fixes from the September 2026 review, tracked in https://github.com/rafael-minuesa/klaro-admin-accessibility/issues/18. Every change was measured on a live WordPress 7.1.2 admin before merging.

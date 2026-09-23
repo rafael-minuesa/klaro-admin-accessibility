@@ -5,7 +5,7 @@ Tags: accessibility, admin, high contrast, large text, classic editor
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,12 @@ The plugin deletes its single `klaro_aa_options` option. No other data is stored
 3. Large admin text with enhanced focus indicators.
 
 == Changelog ==
+
+= 1.1.1 =
+* Large text: top-level admin menu items no longer get extra padding, so long labels such as WooCommerce stay on one line
+* High contrast: admin bar badges with their own light background (Store coming soon) are black on white
+* High contrast: the theme details popup under Appearance has opaque black panels and a visible close button
+* High contrast: text inside any button follows the button's colors, which fixes the white-on-white Site Health rows
 
 = 1.1.0 =
 * High contrast: the native "Skip to main content" link and the active admin-menu icon were white on white; both readable now, including the collapsed menu
