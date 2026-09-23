@@ -435,6 +435,71 @@ body.klaro-aa-high-contrast #screen-meta-links .show-settings {
 	border: 2px solid #FFFFFF !important;
 }
 
+/* Media dialogs (Add Media, attachment details, edit image) are appended
+   to <body>, outside the content sweep, so they kept core's light panels
+   while the global link, input and focus rules assumed the black page.
+   Give the frame chrome the same palette; attachment tiles keep their light
+   surface so image previews and their file names stay as core draws them. */
+body.klaro-aa-high-contrast .media-modal-content,
+body.klaro-aa-high-contrast .media-frame,
+body.klaro-aa-high-contrast .media-frame-title,
+body.klaro-aa-high-contrast .media-frame-menu,
+body.klaro-aa-high-contrast .media-menu,
+body.klaro-aa-high-contrast .media-frame-router,
+body.klaro-aa-high-contrast .media-router,
+body.klaro-aa-high-contrast .media-frame-content,
+body.klaro-aa-high-contrast .media-frame-toolbar,
+body.klaro-aa-high-contrast .media-toolbar,
+body.klaro-aa-high-contrast .media-sidebar,
+body.klaro-aa-high-contrast .attachments-browser .attachments,
+body.klaro-aa-high-contrast .attachments-browser .media-toolbar,
+body.klaro-aa-high-contrast .attachment-details,
+body.klaro-aa-high-contrast .attachment-info,
+body.klaro-aa-high-contrast .uploader-inline,
+body.klaro-aa-high-contrast .media-embed,
+body.klaro-aa-high-contrast .media-modal .setting,
+body.klaro-aa-high-contrast .edit-attachment-frame .attachment-media-view,
+body.klaro-aa-high-contrast .edit-attachment-frame .attachment-info {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .media-frame :is(.media-frame-title, .media-menu, .media-router, .media-toolbar, .media-sidebar, .attachment-details, .attachment-info, .uploader-inline, .media-embed, .setting) :is(h1, h2, h3, h4, p, li, dt, dd, label, legend, span, strong, em, small, .name, .filename, .value) {
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .media-frame .media-menu-item,
+body.klaro-aa-high-contrast .media-router .media-menu-item {
+	color: #00D4FF !important;
+	border-color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .media-frame .media-menu-item.active,
+body.klaro-aa-high-contrast .media-router .media-menu-item.active,
+body.klaro-aa-high-contrast .media-frame .media-menu-item:hover,
+body.klaro-aa-high-contrast .media-frame .media-menu-item:focus {
+	background: #FFFFFF !important;
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast .media-modal-close .media-modal-icon::before,
+body.klaro-aa-high-contrast .media-frame .dashicons {
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .media-frame .separator,
+body.klaro-aa-high-contrast .media-sidebar,
+body.klaro-aa-high-contrast .media-frame-router,
+body.klaro-aa-high-contrast .media-frame-toolbar {
+	border-color: #FFFFFF !important;
+}
+
+/* Selected tile: a white ring on the black frame instead of core's blue. */
+body.klaro-aa-high-contrast .attachment.selected .thumbnail,
+body.klaro-aa-high-contrast .attachment.details .thumbnail {
+	box-shadow: 0 0 0 4px #FFFFFF !important;
+}
+
 /* ==========================================================================
    Simplified one-column dashboard (.klaro-aa-simplify-menu)
 
