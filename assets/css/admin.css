@@ -166,6 +166,19 @@ body.klaro-aa-high-contrast #adminmenu li.wp-has-current-submenu a.wp-has-curren
 	color: #000000 !important;
 }
 
+/* Core keeps active Dashicons white; match the inverted menu background,
+   including the collapsed menu where the icon is the only visible label. */
+body.klaro-aa-high-contrast #adminmenu li.current a.menu-top .wp-menu-image::before,
+body.klaro-aa-high-contrast #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu .wp-menu-image::before {
+	color: #000000 !important;
+}
+
+/* Native skip links retain a white background outside the content sweep. */
+body.klaro-aa-high-contrast .screen-reader-shortcut:focus {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
 body.klaro-aa-high-contrast .widefat thead th,
 body.klaro-aa-high-contrast .widefat thead td {
 	background: #FFFFFF !important;
