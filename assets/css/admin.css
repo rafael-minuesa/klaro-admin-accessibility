@@ -455,6 +455,43 @@ body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-header button:
 	color: #FFFFFF !important;
 }
 
+/* Plugin information page (the modal on Plugins > Add New and Updates).
+   It is rendered through iframe_header() with no #wpbody-content, so the
+   sweep never reaches core's white description panel and light sidebar:
+   white text on white. Give the page the black palette explicitly. */
+body.klaro-aa-high-contrast #plugin-information-scrollable,
+body.klaro-aa-high-contrast #plugin-information-content,
+body.klaro-aa-high-contrast #plugin-information-tabs,
+body.klaro-aa-high-contrast #section-holder,
+body.klaro-aa-high-contrast #section-holder .section,
+body.klaro-aa-high-contrast #plugin-information-content .fyi,
+body.klaro-aa-high-contrast #plugin-information-footer {
+	background: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #plugin-information-content :is(p, li, dt, dd, td, th, h1, h2, h3, h4, h5, h6, strong, em, span, small, code, blockquote, figcaption) {
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #plugin-information-tabs a {
+	background: #000000 !important;
+	color: #00D4FF !important;
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #plugin-information-tabs a.current,
+body.klaro-aa-high-contrast #plugin-information-tabs a:hover,
+body.klaro-aa-high-contrast #plugin-information-tabs a:focus {
+	background: #FFFFFF !important;
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #plugin-information-content .fyi,
+body.klaro-aa-high-contrast #plugin-information-footer {
+	border-color: #FFFFFF !important;
+}
+
 /* Screen Options / Help panels: core gives them a white background,
    which turned the inherited white text invisible. */
 body.klaro-aa-high-contrast #screen-meta,
