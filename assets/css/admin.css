@@ -238,6 +238,14 @@ body.klaro-aa-high-contrast #wpadminbar .ab-item {
 	color: #FFFFFF !important;
 }
 
+/* Admin bar items that bring their own light background (WooCommerce's
+   "Store coming soon" badge) would show white text on it; invert them. */
+body.klaro-aa-high-contrast #wpadminbar #wp-admin-bar-woocommerce-site-visibility-badge .ab-item,
+body.klaro-aa-high-contrast #wpadminbar .ab-item[style*="background"] {
+	background: #FFFFFF !important;
+	color: #000000 !important;
+}
+
 body.klaro-aa-high-contrast #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
 body.klaro-aa-high-contrast #adminmenu .wp-menu-arrow,
 body.klaro-aa-high-contrast #adminmenu .wp-menu-arrow div,
