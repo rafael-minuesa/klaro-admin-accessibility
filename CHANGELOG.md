@@ -7,12 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.2] - 2026-09-24
+## [1.1.2] - 2026-09-23
 
 ### Fixed
 - High contrast: the plugin information page (the details modal) is rendered through `iframe_header()` with no `#wpbody-content`, so its white description panel, light sidebar, tabs and footer kept core's backgrounds under the forced white text. The page now gets the black palette: description 21:1, tabs 21:1, sidebar links 11.86:1, footer 21:1.
 
-## [1.1.1] - 2026-09-24
+## [1.1.1] - 2026-09-23
 
 Four fixes from local testing of 1.1.0.
 
@@ -22,7 +22,7 @@ Four fixes from local testing of 1.1.0.
 - High contrast: the Appearance > Themes details overlay had its panels stripped by the content sweep; backdrop, panels and header buttons are black with white text and a white frame.
 - High contrast: the readable-pairs rule now covers the bare `button` element, so Site Health's accordion rows read 12.82:1 instead of white on white.
 
-## [1.1.0] - 2026-09-24
+## [1.1.0] - 2026-09-23
 
 Fixes from the September 2026 review, tracked in https://github.com/rafael-minuesa/klaro-admin-accessibility/issues/18. Every change was measured on a live WordPress 7.1.2 admin before merging.
 
