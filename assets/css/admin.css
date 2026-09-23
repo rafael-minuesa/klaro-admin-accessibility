@@ -331,12 +331,12 @@ body.klaro-aa-high-contrast #wpbody-content a:not(.button):not(.button-primary):
 	background-color: transparent !important;
 }
 
-/* Readable pairs the sweep must not split. Text inside a button or tab
+/* Readable pairs the sweep must not split. Text inside any button or tab
    follows the control's own colors (a white primary button had its child
    span forced white). Text inside an element whose inline background is
    preserved follows that element's color, and links there inherit it too,
    underlined, instead of the cyan meant for the black background. */
-body.klaro-aa-high-contrast #wpbody-content :is(.button, .button-primary, .button-secondary, .button-link, .nav-tab, .page-title-action) :is(span, strong, em, b, i, small, code, abbr) {
+body.klaro-aa-high-contrast #wpbody-content :is(button, .button, .button-primary, .button-secondary, .button-link, .nav-tab, .page-title-action) :is(span, strong, em, b, i, small, code, abbr) {
 	background-color: transparent !important;
 	color: inherit !important;
 }
