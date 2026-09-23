@@ -60,6 +60,46 @@ body.klaro-aa-large-text #post-status-info td {
 	font-size: 16px !important;
 }
 
+/* Core sets explicit sizes on the reading text itself (13px paragraphs,
+   14px settings labels and descriptions), so the enlarged ancestors above
+   never reach it. Enlarge the text elements directly. Tables and buttons
+   keep their own 16px rules above. */
+body.klaro-aa-large-text #wpbody-content p,
+body.klaro-aa-large-text #wpbody-content li,
+body.klaro-aa-large-text #wpbody-content dd,
+body.klaro-aa-large-text #wpbody-content dt,
+body.klaro-aa-large-text #wpbody-content label,
+body.klaro-aa-large-text #wpbody-content legend,
+body.klaro-aa-large-text #wpbody-content .description,
+body.klaro-aa-large-text #wpbody-content .form-table th,
+body.klaro-aa-large-text #wpbody-content .form-table td,
+body.klaro-aa-large-text #wpbody-content .form-table td p.description,
+body.klaro-aa-large-text #wpbody-content .notice p {
+	font-size: 18px !important;
+	line-height: 1.6 !important;
+}
+
+body.klaro-aa-large-text #wpbody-content .form-table th {
+	width: 260px !important;
+}
+
+/* Titles and actions core keeps at 13 to 14px. */
+body.klaro-aa-large-text #wpbody-content .wp-list-table .row-title,
+body.klaro-aa-large-text #wpbody-content .page-title-action,
+body.klaro-aa-large-text #wpbody-content .postbox-header h2,
+body.klaro-aa-large-text #wpbody-content .postbox .hndle {
+	font-size: 16px !important;
+}
+
+/* Keep 16px table rows and buttons from inheriting the 18px paragraph size
+   through their own labels and descriptions. */
+body.klaro-aa-large-text #wpbody-content .wp-list-table :is(p, li, label, .description),
+body.klaro-aa-large-text #wpbody-content .button,
+body.klaro-aa-large-text #wpbody-content .button-primary,
+body.klaro-aa-large-text #wpbody-content .button-secondary {
+	font-size: 16px !important;
+}
+
 /* ==========================================================================
    High contrast admin (.klaro-aa-high-contrast)
    ========================================================================== */
