@@ -196,13 +196,14 @@ class Klaro_AA_Settings {
 										<input
 											type="checkbox"
 											id="klaro-aa-<?php echo esc_attr( $key ); ?>"
+											aria-describedby="klaro-aa-<?php echo esc_attr( $key ); ?>-description"
 											name="<?php echo esc_attr( self::OPTION_NAME . '[' . $key . ']' ); ?>"
 											value="1"
 											<?php checked( ! empty( $options[ $key ] ) ); ?>
 										/>
 										<?php echo esc_html( $field['label'] ); ?>
 									</label>
-									<p class="description"><?php echo esc_html( $field['description'] ); ?></p>
+									<p id="klaro-aa-<?php echo esc_attr( $key ); ?>-description" class="description"><?php echo esc_html( $field['description'] ); ?></p>
 								</fieldset>
 							</td>
 						</tr>
