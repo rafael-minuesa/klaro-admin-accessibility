@@ -5,7 +5,7 @@ Tags: accessibility, admin, high contrast, large text, classic editor
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,19 @@ The plugin deletes its single `klaro_aa_options` option. No other data is stored
 3. Large admin text with enhanced focus indicators.
 
 == Changelog ==
+
+= 1.1.0 =
+* High contrast: the native "Skip to main content" link and the active admin-menu icon were white on white; both readable now, including the collapsed menu
+* High contrast: dropdown arrows restored, and large text no longer covers the arrow
+* High contrast: text inside white buttons and tabs, and text and links inside preserved inline backgrounds, keep readable colors
+* High contrast: the Add Media and attachment dialogs use the same black palette, so links, inputs and focus rings sit on matching surfaces
+* High contrast: notice text on admin pages rendered inside modals (plugin information) is readable
+* High contrast editor: highlighted text and colored table cells stay readable in the classic editor; authored colors are respected and nothing is written to the post
+* High contrast: TinyMCE styling stays inside wp-admin and no longer changes front-end editors
+* Large text: settings labels, descriptions, paragraphs, row titles and box headings are enlarged, not only their containers
+* Settings: each checkbox exposes its explanatory text to assistive technology
+* Classic editor: the preference is decided when WordPress asks, so a theme's klaro_aa_enabled_features filter works in both directions
+* Uninstall: the option is removed from every site on multisite
 
 = 1.0.1 =
 * Large text mode: reduced oversized admin button padding (now 3px 14px), 44px minimum touch-target height preserved

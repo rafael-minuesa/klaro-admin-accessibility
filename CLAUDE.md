@@ -6,7 +6,9 @@ WordPress plugin making the admin area accessible: high contrast, large text, fo
 
 ## Current Version
 
-**v1.0.1** (2026-07-15) - Large text mode fixes: button padding, classic editor status bar text size.
+**v1.1.0** (2026-09-24) - September 2026 review fixes (tracker https://github.com/rafael-minuesa/klaro-admin-accessibility/issues/18): 11 issues merged as one PR each, all measured live. Local plugin folder `/srv/http/wordpress/wp-content/plugins/klaro-admin-accessibility` is a SYMLINK to this repo, so the site runs whatever branch is checked out. TinyMCE `content_style` is printed unescaped inside a double-quoted JS string: never use double quotes in that CSS. Not yet on SVN.
+
+Previous: **v1.0.1** (2026-07-15) - Large text mode fixes: button padding, classic editor status bar text size.
 
 ## File Structure
 

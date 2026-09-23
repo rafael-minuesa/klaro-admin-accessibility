@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-09-24
+
+Fixes from the September 2026 review, tracked in https://github.com/rafael-minuesa/klaro-admin-accessibility/issues/18. Every change was measured on a live WordPress 7.1.2 admin before merging.
+
+### Fixed
+- High contrast: the native focused "Skip to main content" link and the active admin-menu Dashicon were white on white (1:1); both are 21:1 now, including the collapsed menu (#4, #5).
+- Dropdowns: high contrast removed the arrow and large text covered its space; a white arrow is restored and 32px is reserved at the inline end, LTR and RTL, native arrow under OS forced colors (#2, #3).
+- High contrast sweep: text inside `.button`, `.button-primary`, `.button-secondary`, `.button-link`, `.nav-tab` and `.page-title-action` follows the control's colors; text and links inside an element with a preserved inline background follow that element's color (#6).
+- High contrast: the Add Media, attachment details and edit-image dialogs, which live outside the content sweep, get the black palette on their chrome, menus, toolbars and sidebar; attachment tiles keep their light surface and previews (#7).
+- High contrast: notice text on admin pages rendered through `iframe_header()` (plugin information) was dark on the black notice; the notice's own text elements are white now (#19).
+- High contrast editor: elements with an inline background, and their descendants, keep their background and get black text unless the author set a color; highlighted text went from 1.07:1 to 19.56:1 and a white cell from 1:1 to 21:1 (#10).
+- High contrast: the TinyMCE `content_style` filter returns the configuration untouched outside admin requests (#9).
+- Large text: paragraphs, list items, labels, legends, descriptions, form-table cells and notice text are 18px; row titles, the Add New action and postbox headings 16px; table rows and buttons keep 16px (#8).
+- Settings: each checkbox references its description with `aria-describedby` (#13).
+- Classic editor: the preference is resolved inside `use_block_editor_for_post` and `use_block_editor_for_post_type` instead of on `plugins_loaded`, so a theme's `klaro_aa_enabled_features` filter is honored in both directions; the Classic Editor plugin keeps precedence (#12).
+- Uninstall: on multisite the option is deleted from every site in batches of 100 (#11).
+
 ## [1.0.1] - 2026-07-15
 
 ### Fixed
