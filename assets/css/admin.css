@@ -40,9 +40,17 @@ body.klaro-aa-large-text .wp-list-table th {
 	padding: 12px !important;
 }
 
-body.klaro-aa-large-text #adminmenu a {
+/* Menu text at 16px. Core lays the top-level link out through .wp-menu-name
+   (8px, 36px on the icon side); adding padding to the link itself on top of
+   that squeezed "WooCommerce" onto three lines in the 160px menu. */
+body.klaro-aa-large-text #adminmenu .wp-menu-name,
+body.klaro-aa-large-text #adminmenu .wp-submenu a {
 	font-size: 16px !important;
-	padding: 10px !important;
+	line-height: 1.3 !important;
+}
+
+body.klaro-aa-large-text #adminmenu .wp-submenu a {
+	padding: 7px 12px !important;
 }
 
 body.klaro-aa-large-text .button,
