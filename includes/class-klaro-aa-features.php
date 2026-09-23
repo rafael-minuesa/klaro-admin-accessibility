@@ -159,9 +159,18 @@ class Klaro_AA_Features {
 		if ( empty( $options['high_contrast'] ) ) {
 			return $mce_init;
 		}
+		// Text is forced white except inside content that carries its own inline
+		// background (highlights, colored table cells): those keep their
+		// background and get black text unless the author also set a color,
+		// which wins because the rule is not important. Nothing here changes
+		// the saved markup; it only styles the editing view. Single quotes in
+		// the selectors: WordPress prints this value inside a double-quoted
+		// JavaScript string without escaping.
 		$css = 'body.mce-content-body{background-color:#000000 !important;color:#FFFFFF !important}'
-			. ' body.mce-content-body :is(h1,h2,h3,h4,h5,h6,p,li,td,th,blockquote,figcaption,span,strong,em){color:#FFFFFF !important}'
-			. ' body.mce-content-body a{color:#00D4FF !important}';
+			. ' body.mce-content-body :is(h1,h2,h3,h4,h5,h6,p,li,td,th,blockquote,figcaption,span,strong,em):not([style*=\'background\']):not([style*=\'background\'] *){color:#FFFFFF !important}'
+			. ' body.mce-content-body [style*=\'background\']{color:#000000}'
+			. ' body.mce-content-body [style*=\'background\'] :is(h1,h2,h3,h4,h5,h6,p,li,td,th,span,strong,em,b,i,a){color:inherit}'
+			. ' body.mce-content-body a:not([style*=\'background\'] *){color:#00D4FF !important}';
 
 		$mce_init['content_style'] = isset( $mce_init['content_style'] ) ? $mce_init['content_style'] . ' ' . $css : $css;
 		return $mce_init;
