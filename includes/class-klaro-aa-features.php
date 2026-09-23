@@ -33,7 +33,8 @@ class Klaro_AA_Features {
 		add_action( 'wp_dashboard_setup', array( __CLASS__, 'simplify_dashboard' ), 999 );
 		add_filter( 'screen_layout_columns', array( __CLASS__, 'simplify_dashboard_columns' ), 10, 2 );
 		add_filter( 'get_user_option_screen_layout_dashboard', array( __CLASS__, 'force_one_column_dashboard' ) );
-		add_action( 'plugins_loaded', array( __CLASS__, 'maybe_use_classic_editor' ) );
+		add_filter( 'use_block_editor_for_post', array( __CLASS__, 'maybe_disable_block_editor' ), 100 );
+		add_filter( 'use_block_editor_for_post_type', array( __CLASS__, 'maybe_disable_block_editor' ), 100 );
 		add_filter( 'tiny_mce_before_init', array( __CLASS__, 'high_contrast_editor_content' ) );
 	}
 
@@ -181,18 +182,25 @@ class Klaro_AA_Features {
 	}
 
 	/**
-	 * Switch to the classic editor when enabled and the Classic Editor
-	 * plugin is not already managing the editor.
+	 * Prefer the classic editor when the resolved setting asks for it.
+	 *
+	 * Decided when WordPress asks, on the edit screens, so a theme's
+	 * klaro_aa_enabled_features callback, registered after plugins_loaded, is
+	 * honored in both directions. The Classic Editor plugin keeps precedence:
+	 * when it is active the value is passed through untouched. A false
+	 * preference never forces the block editor on.
+	 *
+	 * @param bool $use_block_editor Whether the block editor would be used.
+	 * @return bool
 	 */
-	public static function maybe_use_classic_editor() {
+	public static function maybe_disable_block_editor( $use_block_editor ) {
+		if ( class_exists( 'Classic_Editor' ) ) {
+			return $use_block_editor;
+		}
 		$options = Klaro_AA_Settings::get_options();
 		if ( empty( $options['classic_editor'] ) ) {
-			return;
+			return $use_block_editor;
 		}
-		if ( class_exists( 'Classic_Editor' ) ) {
-			return;
-		}
-		add_filter( 'use_block_editor_for_post', '__return_false' );
-		add_filter( 'use_block_editor_for_post_type', '__return_false' );
+		return false;
 	}
 }
