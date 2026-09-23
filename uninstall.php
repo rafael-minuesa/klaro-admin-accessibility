@@ -31,6 +31,8 @@ do {
 		)
 	);
 
+	$klaro_aa_found = count( $klaro_aa_site_ids );
+
 	foreach ( $klaro_aa_site_ids as $klaro_aa_site_id ) {
 		switch_to_blog( $klaro_aa_site_id );
 		delete_option( 'klaro_aa_options' );
@@ -38,4 +40,4 @@ do {
 	}
 
 	$klaro_aa_offset += $klaro_aa_batch;
-} while ( count( $klaro_aa_site_ids ) === $klaro_aa_batch );
+} while ( $klaro_aa_found === $klaro_aa_batch );
