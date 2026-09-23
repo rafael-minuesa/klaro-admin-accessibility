@@ -105,6 +105,25 @@ body.klaro-aa-high-contrast .notice {
 	color: #FFFFFF !important;
 }
 
+/* Core colors the notice text itself (.notice p is #1e1e1e). Inside
+   #wpbody-content the sweep below repaints it, but admin pages rendered
+   through iframe_header() (plugin information, theme previews) have no
+   #wpbody-content, so the text has to be set here. */
+body.klaro-aa-high-contrast .notice p,
+body.klaro-aa-high-contrast .notice .notice-title,
+body.klaro-aa-high-contrast .notice :is(strong, em, b, i, span, code) {
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast .notice a {
+	color: #00D4FF !important;
+}
+
+body.klaro-aa-high-contrast .notice a:hover,
+body.klaro-aa-high-contrast .notice a:focus {
+	color: #FFFFFF !important;
+}
+
 /* The Privacy Policy guide notice renders before .wp-header-end, so core
    never relocates it below the Screen Options / Help buttons. Core hides
    the resulting underlap with white-on-white; the high-contrast border
