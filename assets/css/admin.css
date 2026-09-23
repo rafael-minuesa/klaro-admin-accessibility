@@ -414,6 +414,31 @@ body.klaro-aa-high-contrast #dashboard-widgets .activity-block li:nth-child(even
 	background-color: #1a1a1a !important;
 }
 
+/* Theme details overlay on Appearance > Themes: the sweep stripped its
+   white panels, leaving the text floating over the theme grid. */
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-backdrop {
+	background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-wrap,
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-header,
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-about,
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-actions {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+	border-color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-wrap {
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-header button,
+body.klaro-aa-high-contrast #wpbody-content .theme-overlay .theme-header button::before {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+}
+
 /* Screen Options / Help panels: core gives them a white background,
    which turned the inherited white text invisible. */
 body.klaro-aa-high-contrast #screen-meta,
