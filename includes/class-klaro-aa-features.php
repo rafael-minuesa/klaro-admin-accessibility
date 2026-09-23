@@ -155,6 +155,10 @@ class Klaro_AA_Features {
 	 * @return array
 	 */
 	public static function high_contrast_editor_content( $mce_init ) {
+		if ( ! is_admin() ) {
+			return $mce_init;
+		}
+
 		$options = Klaro_AA_Settings::get_options();
 		if ( empty( $options['high_contrast'] ) ) {
 			return $mce_init;
