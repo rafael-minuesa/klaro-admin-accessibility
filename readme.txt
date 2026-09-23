@@ -5,7 +5,7 @@ Tags: accessibility, admin, high contrast, large text, classic editor
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,9 @@ The plugin deletes its single `klaro_aa_options` option. No other data is stored
 3. Large admin text with enhanced focus indicators.
 
 == Changelog ==
+
+= 1.1.2 =
+* High contrast: the plugin details popup (Plugins > Add New, Updates) is readable throughout, description, tabs, sidebar and footer
 
 = 1.1.1 =
 * Large text: top-level admin menu items no longer get extra padding, so long labels such as WooCommerce stay on one line

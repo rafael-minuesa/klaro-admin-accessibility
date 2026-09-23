@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-09-24
+
+### Fixed
+- High contrast: the plugin information page (the details modal) is rendered through `iframe_header()` with no `#wpbody-content`, so its white description panel, light sidebar, tabs and footer kept core's backgrounds under the forced white text. The page now gets the black palette: description 21:1, tabs 21:1, sidebar links 11.86:1, footer 21:1.
+
 ## [1.1.1] - 2026-09-24
 
 Four fixes from local testing of 1.1.0.
