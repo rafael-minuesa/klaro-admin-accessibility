@@ -52,6 +52,28 @@ body.klaro-aa-large-text .wp-list-table th {
 	padding: 12px !important;
 }
 
+/* Column headers must never split a word ("Categorie" / "s"). Core list
+   tables use table-layout: fixed with percentage widths tuned for 13px
+   text; at 16px a column can end up narrower than its label (10px inside
+   on Products at a 1000px window), and break-word then splits it. With the
+   automatic layout no column is narrower than its longest header word;
+   body cells may break long values anywhere so they do not force columns
+   wider. A crowded table scrolls sideways instead (data tables are exempt
+   from reflow, and core stacks list tables below 782px anyway). */
+body.klaro-aa-large-text .wp-list-table {
+	table-layout: auto !important;
+}
+
+body.klaro-aa-large-text .wp-list-table :is(thead, tfoot) :is(th, td),
+body.klaro-aa-large-text .wp-list-table :is(thead, tfoot) :is(th, td) * {
+	overflow-wrap: normal !important;
+	word-break: normal !important;
+}
+
+body.klaro-aa-large-text .wp-list-table tbody :is(th, td) {
+	overflow-wrap: anywhere !important;
+}
+
 /* Menu text at 16px. Core lays the top-level link out through .wp-menu-name
    (8px, 36px on the icon side); adding padding to the link itself on top of
    that squeezed "WooCommerce" onto three lines in the 160px menu. */
