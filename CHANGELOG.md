@@ -7,10 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- High contrast now works from one base rule instead of a list of element types. Every element in the admin content area (`#wpcontent`, which includes the WooCommerce admin header) is opaque black with white text, except media, iframes, empty decorative layers and elements with an inline background. The rule has zero specificity (`:where()`), so links, buttons, tabs, focus rings and selected states defined after it still apply. The old list left pockets that needed one fix per screen: status badges, script-built dropdown options, plugin elements not on the list, and see-through dropdown panels and sticky bars. A contrast audit of 14 admin screens (Dashboard, Posts, Products, Orders, Plugins, Users, Settings, plugin settings, WooCommerce Home and Settings, product editor, Media, Comments, new post) went from 32 findings to 0 real ones. The only remaining finding is WooCommerce's closed activity panel, which is parked off-screen.
+- Table headers are no longer inverted to white. They use the base palette with a white rule below them.
+
 ### Fixed
 - Large text: dropdowns in list tables (Products filters, Bulk actions) kept a fixed 32px height and cut their text off. Their height now follows the content (44px).
-- High contrast: script-built dropdowns (WooCommerce select controls, block editor comboboxes) had a transparent list panel over the page and dark options on black. Every listbox now has an opaque black panel, white options, and an inverted highlighted or selected option; their value fields (`input[role="combobox"]`) and placeholders are readable too.
-- High contrast: WooCommerce stock labels on the Products list read at about 3:1; "In stock", "Out of stock" and "On backorder" now use light green, red and orange at 7:1 or more.
+- High contrast: order status badges (for example "Refunded" and "Processing") were white text on light gray or green, about 1.3:1.
+- High contrast: WooCommerce and block-editor dropdowns had a see-through list panel and dark options on black. The panel is now outlined and the highlighted or selected option is inverted.
+- High contrast: script-rendered primary and secondary buttons (`.components-button`, for example "Get paid" on WooCommerce Home) now match core buttons, and links styled as buttons no longer take the cyan link color (a white primary button had cyan text at 1.8:1).
+- High contrast: disabled buttons (first and previous page on page 1) looked like working ones; they now have gray text and a dashed border, at 8.9:1.
+- High contrast: WooCommerce stock labels read at about 3:1. "In stock", "Out of stock" and "On backorder" now use light green, red and orange, at 7:1 or more.
+- High contrast: placeholders are readable, #BFBFBF.
 
 ## [1.1.2] - 2026-09-23
 

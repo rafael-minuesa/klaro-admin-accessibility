@@ -177,7 +177,7 @@ body.klaro-aa-high-contrast .notice :is(strong, em, b, i, span, code) {
 	color: #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast .notice a {
+body.klaro-aa-high-contrast .notice a:not(.button, .button-primary, .button-secondary, .page-title-action) {
 	color: #00D4FF !important;
 }
 
@@ -289,20 +289,65 @@ body.klaro-aa-high-contrast .screen-reader-shortcut:focus {
 	color: #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast .widefat thead th,
-body.klaro-aa-high-contrast .widefat thead td {
-	background: #FFFFFF !important;
-	color: #000000 !important;
-	border: 2px solid #FFFFFF !important;
+/* Base palette for the whole admin content area (#wpcontent: the screen
+   itself plus the WooCommerce admin header, not the admin menu or bar): EVERY element is opaque black with white
+   text. It used to be a list of tags made transparent, which always left
+   pockets (status badges, option buttons, plugin elements off the list) and
+   let stacked layers (dropdown panels, sticky bars) show the page through
+   them. Media, iframes and elements with an inline background (color
+   swatches, previews) keep their own colors. Empty elements are skipped:
+   they have no text to make readable, and some are layers drawn ON TOP of
+   content (the block editor's Card/Surface shadow, .components-elevation,
+   is an empty absolutely positioned div), which an opaque black would
+   turn into a sheet hiding the card.
+   :where() gives this rule zero specificity: every deliberate rule after it
+   (links, buttons, tabs, focus, selected and pressed states) wins without
+   having to out-rank it. */
+:where(body.klaro-aa-high-contrast #wpcontent) :where(:not(img, video, canvas, iframe, picture, :empty, [style*="background"])) {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
 }
 
-/* Forced-colors sweep for the content area. Core screens and third-party
-   plugin pages bring arbitrary panel backgrounds and muted text; strip
-   every author background and force white text. Elements with inline
-   background styles (color swatches, previews) are preserved. */
-body.klaro-aa-high-contrast #wpbody-content :is(div, section, article, aside, nav, header, footer, main, form, fieldset, legend, table, thead, tbody, tfoot, tr, td, th, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, blockquote, figure, figcaption, caption, label, span, small, strong, em, b, i, code, pre, address):not([style*="background"]) {
+/* List table striping: the whole even row, contents included, so cell text
+   and badges sit on the row color rather than on black boxes. Also zero
+   specificity, and after the base so it wins the tie. */
+:where(body.klaro-aa-high-contrast #wpcontent .wp-list-table tbody tr:nth-child(even)) :where(:not(img, video, canvas, iframe, picture, :empty, [style*="background"])),
+:where(body.klaro-aa-high-contrast #wpcontent .wp-list-table tbody tr:nth-child(even)) {
+	background-color: #1a1a1a !important;
+}
+
+/* Script-rendered buttons (WordPress components, used by WooCommerce admin
+   and the block editor) get the same palette as core buttons: primary
+   white with black text, secondary black with a white border. Tertiary and
+   link variants stay text-like. */
+body.klaro-aa-high-contrast #wpcontent .components-button:is(.is-primary, .is-secondary) {
+	border: 2px solid #FFFFFF !important;
+	box-shadow: none !important;
+}
+
+body.klaro-aa-high-contrast #wpcontent .components-button.is-primary,
+body.klaro-aa-high-contrast #wpcontent .components-button.is-primary * {
+	background-color: #FFFFFF !important;
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #wpcontent .components-button.is-primary:is(:hover, :focus) {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #wpcontent .components-button.is-primary:is(:hover, :focus) * {
 	background-color: transparent !important;
 	color: #FFFFFF !important;
+}
+
+/* Disabled controls (for example the first/previous page buttons on page 1)
+   must not look like working ones: gray text and a dashed border, 8.9:1. */
+body.klaro-aa-high-contrast #wpcontent :is(.button, button, input[type="button"], input[type="submit"]):is(:disabled, .disabled, [aria-disabled="true"]) {
+	background-color: #000000 !important;
+	color: #A6A6A6 !important;
+	border: 2px dashed #A6A6A6 !important;
+	cursor: not-allowed;
 }
 
 /* Editor toolbars are absolutely positioned and become sticky on scroll.
@@ -378,22 +423,11 @@ body.klaro-aa-high-contrast #wpbody-content [style*="background"] a:focus {
 	text-decoration: underline !important;
 }
 
-/* Intentional inversions and striping restored above the sweep
-   (these selectors must out-rank the forced-colors rule). */
-body.klaro-aa-high-contrast #wpbody-content .widefat thead th,
-body.klaro-aa-high-contrast #wpbody-content .widefat thead td {
-	background-color: #FFFFFF !important;
-	color: #000000 !important;
-}
-
-body.klaro-aa-high-contrast #wpbody-content .widefat thead :is(th, td) :is(span, a, strong, em, abbr) {
-	background-color: transparent !important;
-	color: #000000 !important;
-}
-
-body.klaro-aa-high-contrast #wpbody-content .wp-list-table tbody tr:nth-child(even) th,
-body.klaro-aa-high-contrast #wpbody-content .wp-list-table tbody tr:nth-child(even) td {
-	background-color: #1a1a1a !important;
+/* Table headers use the base palette (they used to be inverted to white,
+   a bright band across every list screen) and are set apart by a heavier
+   rule below them. */
+body.klaro-aa-high-contrast #wpcontent .widefat :is(thead, tfoot) :is(th, td) {
+	border-bottom: 2px solid #FFFFFF !important;
 }
 
 /* WooCommerce stock labels (Products list): its dark green and red fell to
@@ -410,30 +444,16 @@ body.klaro-aa-high-contrast #wpbody-content mark.onbackorder {
 	color: #FFC266 !important;
 }
 
-/* The field that shows a script-built dropdown's value is often an
-   input[type="button"] with role="combobox", which the text-input rules
-   above do not match; it kept near-black text on black. */
-body.klaro-aa-high-contrast #wpwrap #wpbody-content input[role="combobox"],
-body.klaro-aa-high-contrast input[role="combobox"] {
-	background-color: #000000 !important;
-	color: #FFFFFF !important;
-}
-
 body.klaro-aa-high-contrast :is(input, textarea)::placeholder {
 	color: #BFBFBF !important;
 	opacity: 1;
 }
 
 /* Script-built dropdowns (WooCommerce select controls, block editor
-   comboboxes and token fields). The sweep above made their white list
-   panels transparent, so the list floated over the page, and the options
-   are buttons the sweep does not reach, so they kept dark text on black.
-   Give every listbox an opaque black panel with white options; the
-   highlighted or selected option is inverted. Body-level popovers are
-   matched too, since some of these lists render outside #wpbody-content.
-   #wpwrap lifts these above the sweep, whose :not([style]) out-ranks a
-   single id. */
-body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"],
+   comboboxes and token fields): the base palette makes the panel opaque;
+   outline it so it reads as a layer, and invert the highlighted or selected
+   option, contents included. Body-level popovers render outside #wpcontent,
+   so the panel rule is not scoped to it. */
 body.klaro-aa-high-contrast [role="listbox"],
 body.klaro-aa-high-contrast .components-popover__content {
 	background-color: #000000 !important;
@@ -441,31 +461,20 @@ body.klaro-aa-high-contrast .components-popover__content {
 	border: 2px solid #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"],
-body.klaro-aa-high-contrast [role="listbox"] [role="option"],
-body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"] *,
-body.klaro-aa-high-contrast [role="listbox"] [role="option"] * {
-	background-color: transparent !important;
-	color: #FFFFFF !important;
-}
-
-body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected),
-body.klaro-aa-high-contrast [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected) {
+body.klaro-aa-high-contrast [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected),
+body.klaro-aa-high-contrast [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected) * {
 	background-color: #FFFFFF !important;
 	color: #000000 !important;
 }
 
-body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected) *,
-body.klaro-aa-high-contrast [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected) * {
-	color: #000000 !important;
-}
-
-body.klaro-aa-high-contrast a {
+/* Links are cyan; links styled as buttons follow the button palette
+   (a white primary button had cyan text at 1.8:1). */
+body.klaro-aa-high-contrast a:not(.button, .button-primary, .button-secondary, .page-title-action) {
 	color: #00D4FF !important;
 }
 
-body.klaro-aa-high-contrast a:hover,
-body.klaro-aa-high-contrast a:focus {
+body.klaro-aa-high-contrast a:not(.button, .button-primary, .button-secondary, .page-title-action):hover,
+body.klaro-aa-high-contrast a:not(.button, .button-primary, .button-secondary, .page-title-action):focus {
 	color: #FFFFFF !important;
 }
 
@@ -488,7 +497,7 @@ body.klaro-aa-high-contrast #dashboard-widgets .inside *:not(a) {
 	color: #FFFFFF !important;
 }
 
-body.klaro-aa-high-contrast #dashboard-widgets .inside a {
+body.klaro-aa-high-contrast #dashboard-widgets .inside a:not(.button, .button-primary, .button-secondary, .page-title-action) {
 	color: #00D4FF !important;
 }
 
