@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Large text: dropdowns in list tables (Products filters, Bulk actions) kept a fixed 32px height and cut their text off. Their height now follows the content (44px).
+- High contrast: script-built dropdowns (WooCommerce select controls, block editor comboboxes) had a transparent list panel over the page and dark options on black. Every listbox now has an opaque black panel, white options, and an inverted highlighted or selected option; their value fields (`input[role="combobox"]`) and placeholders are readable too.
+- High contrast: WooCommerce stock labels on the Products list read at about 3:1; "In stock", "Out of stock" and "On backorder" now use light green, red and orange at 7:1 or more.
+
 ## [1.1.2] - 2026-09-23
 
 ### Fixed

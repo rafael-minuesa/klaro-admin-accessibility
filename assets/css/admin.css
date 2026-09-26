@@ -34,6 +34,14 @@ body.klaro-aa-large-text select:not([multiple]):is(:not([size]), [size="0"], [si
 	padding-inline-end: 32px !important;
 }
 
+/* Core and WooCommerce give list-table selects a fixed 32px height; with
+   16px text, the padding above and core's 2.14 line height, the text was
+   cut off. Let the height follow the content (44px at these values). */
+body.klaro-aa-large-text select {
+	height: auto !important;
+	line-height: 1.5 !important;
+}
+
 body.klaro-aa-large-text .wp-list-table td,
 body.klaro-aa-large-text .wp-list-table th {
 	font-size: 16px !important;
@@ -386,6 +394,70 @@ body.klaro-aa-high-contrast #wpbody-content .widefat thead :is(th, td) :is(span,
 body.klaro-aa-high-contrast #wpbody-content .wp-list-table tbody tr:nth-child(even) th,
 body.klaro-aa-high-contrast #wpbody-content .wp-list-table tbody tr:nth-child(even) td {
 	background-color: #1a1a1a !important;
+}
+
+/* WooCommerce stock labels (Products list): its dark green and red fell to
+   about 3:1 on the black and #1a1a1a rows. */
+body.klaro-aa-high-contrast #wpbody-content mark.instock {
+	color: #66FF66 !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content mark.outofstock {
+	color: #FF8A8A !important;
+}
+
+body.klaro-aa-high-contrast #wpbody-content mark.onbackorder {
+	color: #FFC266 !important;
+}
+
+/* The field that shows a script-built dropdown's value is often an
+   input[type="button"] with role="combobox", which the text-input rules
+   above do not match; it kept near-black text on black. */
+body.klaro-aa-high-contrast #wpwrap #wpbody-content input[role="combobox"],
+body.klaro-aa-high-contrast input[role="combobox"] {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast :is(input, textarea)::placeholder {
+	color: #BFBFBF !important;
+	opacity: 1;
+}
+
+/* Script-built dropdowns (WooCommerce select controls, block editor
+   comboboxes and token fields). The sweep above made their white list
+   panels transparent, so the list floated over the page, and the options
+   are buttons the sweep does not reach, so they kept dark text on black.
+   Give every listbox an opaque black panel with white options; the
+   highlighted or selected option is inverted. Body-level popovers are
+   matched too, since some of these lists render outside #wpbody-content.
+   #wpwrap lifts these above the sweep, whose :not([style]) out-ranks a
+   single id. */
+body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"],
+body.klaro-aa-high-contrast [role="listbox"],
+body.klaro-aa-high-contrast .components-popover__content {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+	border: 2px solid #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"],
+body.klaro-aa-high-contrast [role="listbox"] [role="option"],
+body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"] *,
+body.klaro-aa-high-contrast [role="listbox"] [role="option"] * {
+	background-color: transparent !important;
+	color: #FFFFFF !important;
+}
+
+body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected),
+body.klaro-aa-high-contrast [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected) {
+	background-color: #FFFFFF !important;
+	color: #000000 !important;
+}
+
+body.klaro-aa-high-contrast #wpwrap #wpbody-content [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected) *,
+body.klaro-aa-high-contrast [role="listbox"] [role="option"]:is(:hover, :focus, [aria-selected="true"], .is-selected) * {
+	color: #000000 !important;
 }
 
 body.klaro-aa-high-contrast a {
