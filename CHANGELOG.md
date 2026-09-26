@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Table headers are no longer inverted to white. They use the base palette with a white rule below them.
 
 ### Fixed
-- Large text: dropdowns in list tables (Products filters, Bulk actions) kept a fixed 32px height and cut their text off. Their height now follows the content (44px).
+- Large text: form controls kept core's line heights, which are tuned for 13px text (2 to 2.92). At 16px, dropdowns with a fixed height cut their text off (Products filters, Bulk actions), and buttons grew to 57 to 59px ("Check it!", "Save Changes"). Every button, input and select now uses a 1.5 line height and 44px sizing, and icon glyphs in button pseudo-elements no longer stretch the line (Screen Options and Help were 50px). A size audit of 170 controls on 16 admin screens went from 31 outside 40 to 48px to 0.
 - High contrast: order status badges (for example "Refunded" and "Processing") were white text on light gray or green, about 1.3:1.
 - High contrast: WooCommerce and block-editor dropdowns had a see-through list panel and dark options on black. The panel is now outlined and the highlighted or selected option is inverted.
 - High contrast: script-rendered primary and secondary buttons (`.components-button`, for example "Get paid" on WooCommerce Home) now match core buttons, and links styled as buttons no longer take the cyan link color (a white primary button had cyan text at 1.8:1).

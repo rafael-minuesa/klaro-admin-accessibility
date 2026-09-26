@@ -34,11 +34,15 @@ body.klaro-aa-large-text select:not([multiple]):is(:not([size]), [size="0"], [si
 	padding-inline-end: 32px !important;
 }
 
-/* Core and WooCommerce give list-table selects a fixed 32px height; with
-   16px text, the padding above and core's 2.14 line height, the text was
-   cut off. Let the height follow the content (44px at these values). */
-body.klaro-aa-large-text select {
+/* Core sizes form controls with unitless line heights tuned for its 13px
+   text (2.14 on selects, 2 on inputs, 2.15 to 2.92 on buttons). At 16px
+   those become 32 to 47px lines: selects with a fixed height cut their
+   text off, and buttons grew to 57 to 59px. One line height for every
+   control, and heights that follow the content, give single-line fields
+   and buttons the same 44px target size. */
+body.klaro-aa-large-text :is(select, textarea, input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="date"], input[type="tel"]) {
 	height: auto !important;
+	min-height: 44px !important;
 	line-height: 1.5 !important;
 }
 
@@ -61,12 +65,23 @@ body.klaro-aa-large-text #adminmenu .wp-submenu a {
 	padding: 7px 12px !important;
 }
 
-body.klaro-aa-large-text .button,
-body.klaro-aa-large-text .button-primary,
-body.klaro-aa-large-text .button-secondary {
+/* 24px line + 8px padding each side = 40px, plus borders: 44px with the
+   2px high contrast border; with core's 1px border, min-height adds the
+   last 2px. */
+body.klaro-aa-large-text :is(.button, .button-primary, .button-secondary, input[type="submit"], input[type="button"], input[type="reset"]) {
 	font-size: 16px !important;
-	padding: 3px 14px !important;
+	line-height: 1.5 !important;
+	padding: 8px 14px !important;
 	min-height: 44px !important;
+}
+
+/* Icon glyphs drawn in button pseudo-elements (the Screen Options and Help
+   arrows are 20px Dashicons with a 30px line height) must not stretch the
+   24px line: they made those tabs 50px tall. */
+body.klaro-aa-large-text :is(.button, .button-primary, .button-secondary)::before,
+body.klaro-aa-large-text :is(.button, .button-primary, .button-secondary)::after {
+	line-height: 1 !important;
+	vertical-align: middle !important;
 }
 
 /* Classic editor status bar under the content box (word count, autosave
