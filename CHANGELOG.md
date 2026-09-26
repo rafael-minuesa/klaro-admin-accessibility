@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- High contrast now works from one base rule instead of a list of element types. Every element in the admin content area (`#wpcontent`, which includes the WooCommerce admin header) is opaque black with white text, except media, iframes, empty decorative layers and elements with an inline background. The rule has zero specificity (`:where()`), so links, buttons, tabs, focus rings and selected states defined after it still apply. The old list left pockets that needed one fix per screen: status badges, script-built dropdown options, plugin elements not on the list, and see-through dropdown panels and sticky bars. A contrast audit of 14 admin screens (Dashboard, Posts, Products, Orders, Plugins, Users, Settings, plugin settings, WooCommerce Home and Settings, product editor, Media, Comments, new post) went from 30 text contrast failures to 0. The covering-layer check flags only WooCommerce's closed activity panel, before and after; it is parked off-screen.
+- Table headers are no longer inverted to white. They use the base palette with a white rule below them.
+
+### Fixed
+- Large text: form controls kept core's line heights, which are tuned for 13px text (2 to 2.92). At 16px, dropdowns with a fixed height cut their text off (Products filters, Bulk actions), and buttons grew to 57 to 59px ("Check it!", "Save Changes"). Every button, input and select now uses a 1.5 line height and 44px sizing, and icon glyphs in button pseudo-elements no longer stretch the line (Screen Options and Help were 50px). A size audit of 170 controls on 16 admin screens went from 31 outside 40 to 48px to 0.
+- Large text: list table column headers split words ("Categorie" / "s" on Products at a 1400px window, down to one letter per line at 1000px) because core's fixed table layout and percentage widths, tuned for 13px text, left columns narrower than their labels. List tables now use the automatic layout, header words never split, and body cells may break long values so they do not force columns wider. Across 8 list screens at 6 window widths, header word splits went from 11 to 0; a crowded table (Products below about 1250px) scrolls sideways instead.
+- High contrast: order status badges (for example "Refunded" and "Processing") were white text on light gray or green, about 1.3:1.
+- High contrast: WooCommerce and block-editor dropdowns had a see-through list panel and dark options on black. The panel is now outlined and the highlighted or selected option is inverted.
+- High contrast: script-rendered primary and secondary buttons (`.components-button`, for example "Get paid" on WooCommerce Home) now match core buttons, and links styled as buttons no longer take the cyan link color (a white primary button had cyan text at 1.8:1).
+- High contrast: disabled buttons (first and previous page on page 1) looked like working ones; they now have gray text and a dashed border, at 8.9:1.
+- High contrast: WooCommerce stock labels read at about 3:1. "In stock", "Out of stock" and "On backorder" now use light green, red and orange, at 7:1 or more.
+- High contrast: placeholders are readable, #BFBFBF.
+
 ## [1.1.2] - 2026-09-23
 
 ### Fixed
