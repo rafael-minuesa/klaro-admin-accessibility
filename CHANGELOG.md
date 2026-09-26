@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-09-26
+
 ### Changed
 - High contrast now works from one base rule instead of a list of element types. Every element in the admin content area (`#wpcontent`, which includes the WooCommerce admin header) is opaque black with white text, except media, iframes, empty decorative layers and elements with an inline background. The rule has zero specificity (`:where()`), so links, buttons, tabs, focus rings and selected states defined after it still apply. The old list left pockets that needed one fix per screen: status badges, script-built dropdown options, plugin elements not on the list, and see-through dropdown panels and sticky bars. A contrast audit of 14 admin screens (Dashboard, Posts, Products, Orders, Plugins, Users, Settings, plugin settings, WooCommerce Home and Settings, product editor, Media, Comments, new post) went from 30 text contrast failures to 0. The covering-layer check flags only WooCommerce's closed activity panel, before and after; it is parked off-screen.
 - Table headers are no longer inverted to white. They use the base palette with a white rule below them.

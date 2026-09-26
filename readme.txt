@@ -5,7 +5,7 @@ Tags: accessibility, admin, high contrast, large text, classic editor
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.2
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,12 @@ The plugin deletes its single `klaro_aa_options` option. No other data is stored
 3. Large admin text with enhanced focus indicators.
 
 == Changelog ==
+
+= 1.2.0 =
+* High contrast is rebuilt on one base rule: every element in the admin content area, including the WooCommerce admin header, is black with white text, so plugin screens, status badges, dropdowns and sticky bars no longer keep unreadable colors or show the page through them
+* High contrast: table headers use the black palette with a white rule instead of a white band; disabled buttons are dashed and gray; buttons drawn by WooCommerce and the block editor match the core buttons; readable stock labels and placeholders
+* Large text: buttons, fields and dropdowns share one line height and a 44px size, so buttons no longer grow to 57px and dropdowns no longer cut their text off
+* Large text: list table column headers never split a word ("Categorie" / "s"); crowded tables scroll sideways instead
 
 = 1.1.2 =
 * High contrast: the plugin details popup (Plugins > Add New, Updates) is readable throughout, description, tabs, sidebar and footer
